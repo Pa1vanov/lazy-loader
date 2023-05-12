@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: black;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  /* margin: auto; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 47vw;
+  height: 85vh;
+  border: 1px solid white;
+  padding: 20px;
+}
+
+.img-item {
+  border: 1px solid white;
+  background-color: white;
+  padding: 5px;
+}
+
+img {
+  width: 21vw;
+  height: 37vh;
+}
+
+.img-item {
+  border: 5px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.lazy {
+  position: relative;
+}
+
+.lazy::after {
+  content: "";
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  border-top-color: black;
+  animation: spin 1s linear infinite;
+  position: absolute;
+}
+
+.lazy::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.reload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  border: 1px solid white;
+  background-color: white;
+  width: 160px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 19px;
+  cursor: pointer;
+  color: black;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  user-select: none;
+}
